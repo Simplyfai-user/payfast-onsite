@@ -1,0 +1,13 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>PayFast On‑site</title>
+  <script src="https://payfast.io/assets/js/engine.js"></script>
+</head>
+<body>
+  <script>
+    const uuid = new URLSearchParams(location.search).get('uuid');
+    if (uuid) PayFast.doPayment({ uuid });
+    else document.body.textContent = 'Missing payment uuid';
+  </script>
+</body></html>
